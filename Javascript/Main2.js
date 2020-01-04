@@ -31,82 +31,120 @@
 
 //roman(402);
 
-//const arabic = (roman) => {
-  
-  //roman = roman.toUpperCase();
-  //var romanList = ["CM", "M", "CD", "D", "XC", "C", "XL", "L", "IX", "X", "IV", "V", "I"];
-  //var romanListValue = [900, 1000, 400, 500, 90, 100, 40, 50, 9, 10, 4, 5, 1];
-  //var index = 0;
-  //var num = 0;
-  //for(var i in romanList){
-    //index = roman.indexOf(romanList[i]);
-    //while(index != -1){
-      //num += parseInt(romanListValue[i]);
-      //roman = roman.replace(romanList[i], "-");
-      //index = roman.indexOf(romanList[i]);
+//const roman = (language) => {
+ 
+  //var regexIt = /^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/
+
+  //var languageList = ["I", "V", "X", "L", "C", "D", "M"];
+  //var romanListValue = [1,5,10,50,100,500,1000];
+
+  //var MatchIt = regexIt.test(language);
+
+  //var romanChar = "";
+  //romanChar = language;
+  //console.log("FromTOP: "+romanChar.length)
+  //console.log("RomanChar: "+romanChar);
+  //function changeChar(change){
+    //var values = -1
+    //switch(change){
+      //case 'I': values = romanListValue[0]; break;
+      //case 'V': values = romanListValue[1]; break;
+      //case 'X': values = romanListValue[2]; break;
+      //case 'L': values = romanListValue[3]; break;
+      //case 'C': values = romanListValue[4]; break;
+      //case 'D': values = romanListValue[5]; break;
+      //case 'M': values = romanListValue[6]; break;
+    //}
+
+    //return values;
+  //}
+ 
+  //function countIt(Total, LastLett, LastDec){
+    //if(LastLett > Total){
+      //return LastDec - Total;
+    //} else {
+      //return LastDec + Total;
     //}
   //}
+//if(MatchIt == true){
+  //var decimal = 0;
+  //var lastNumber = 0;
 
-  //console.log(num);
-  //return num;
-//}
-
-//arabic("IV");
-
-//const planet = (language) => {
-  
-  //var languageList = ["glob", "prok", "pish", "tegj"];
-  //var romanListValue = [1,5,10,50];
-  //var index = 0;
-  //var num = 0;
-  //for(var i in languageList){
-    //index = language.indexOf(languageList[i]);
-    //while(index != -1){
-      //num += parseInt(romanListValue[i]);
-      //language = language.replace(languageList[i], "-");
-      //index = language.indexOf(languageList[i]);
-    //}
+  //for(var i=romanChar.length-1; i>=0; i--){
+    //var string = romanChar.charAt(i);
+    //console.log(romanChar.length)
+    //decimal = countIt(changeChar(string), lastNumber, decimal);
+    //lastNumber = changeChar(string);
   //}
 
-  //console.log(num);
-  //return num;
+  //console.log("TotalDecimal: "+decimal);
+  //return decimal;
+  //}
+//else {
+  //console.log("Wrong Input");
+  //}
+
 //}
 
-//planet("glob");
+//roman("II");
 
-const arabic = (roman) => {
+const planet = (language) => {
   
-  roman = roman.toUpperCase();
-  var romanList = ["I", "V", "X", "L", "C", "D", "M"];
-  var romanListValue = [1, 5, 10, 50, 100, 500, 1000];
+  var PlanetlanguageList = ["glob", "prok", "pish", "tegj"];
+  var languageList = ["I", "V", "X", "L"];
+  var romanListValue = [1,5,10,50];
   var index = 0;
-  var num = 0;
-  for(var i in romanList){
-    index = roman.indexOf(romanList[i]);
-    console.log("Index: "+index)
+  var result = 0;
+
+  var romanChar = "";
+  romanChar = language;
+ 
+  var decimal = 0;
+  var lastNumber = 0;
+  var arrayLength = [];
+  var parseIt = [];
+
+  for(var i in language){
+    index = language.indexOf(PlanetlanguageList[i]);
     while(index != -1){
-      console.log("RomanListValue: "+romanListValue[i])
-      //if(num){
-        //num += parseInt(romanListValue[i]);
-      //}
-      var romanValue = parseInt(romanListValue[i]);
-      //if(romanValue >= num ){
-        num += romanValue;
-      //}
-      //else {
-        //num = romanValue - num;
-      //}
-      roman = roman.replace(romanList[i], "-");
-      index = roman.indexOf(romanList[i]);
-      console.log("IndexInWhile: "+index);
-      console.log("RomanInWhile: "+roman);
+      result += parseInt(romanListValue[i]);
+      console.log("ResultI: "+result);
+      arrayLength.push(result);
+      parseIt.push(result);
+
+      for(var j=arrayLength.length-1; j>=0; j--){
+        decimal = countIt(parseInt(parseIt[i]), lastNumber, decimal);
+        lastNumber = parseInt(parseIt[i]);
+        console.log("Parsing: "+parseIt[i]);
+      }
+
+      language = language.replace(PlanetlanguageList[i], "");
+      index = language.indexOf(PlanetlanguageList[i]);
     }
   }
 
-  console.log("Result: "+num);
-  return num;
+  //for(var j=arrayLength.length-1; j>=0; j--){
+    //decimal = countIt(parseInt(parseIt[j]), lastNumber, decimal);
+    //lastNumber = parseInt(parseIt[j]);
+    //console.log("Parsing: "+parseIt[j]);
+  //}
+
+  function countIt(Total, LastLett, LastDec){
+    if(LastLett > Total){
+      return LastDec - Total;
+    } else {
+      return LastDec + Total;
+    }
+  }
+
+
+  console.log("ResultOut: "+result);
+
+  console.log("ArrayLength: "+arrayLength.length);
+  console.log("TotalDecimal: "+decimal);
+  console.log(result);
+  return result;
 }
 
-arabic("XXII");
-
-
+planet("prokglob");
+ 

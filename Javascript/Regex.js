@@ -7,15 +7,15 @@ const regex = /Roman/;
  * 
   */
 
-const isExist = regex.test(string);
+//const isExist = regex.test(string);
 
-console.log(isExist);
+//console.log(isExist);
 
 //const string = "Try regex to 5Roman5";
 //const regex = /regex to [a-zA-Z0-9]+/;
-//const isExist = regex.exec(string);
+const isExist = regex.exec(string);
 
-//console.log(isExist);
+console.log(isExist);
 
 //const string = "Try regex to Roman";
 //const regex = /regex to ([a-zA-Z]+)/;
