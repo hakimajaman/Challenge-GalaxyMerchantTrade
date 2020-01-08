@@ -19,14 +19,15 @@ const roman = (arabic) => {
   var romanNumbers = "";
 
   for(var i in Validator) {
+    console.log("This Validator[i] = "+Validator[i])
     while(arabic >= Validator[i]){
       romanNumbers += i;
       arabic -= Validator[i];
-      console.log(i);
+      console.log("i: "+i);
     }
   }
 
-  console.log(romanNumbers);
+  console.log("Roman Numbers: "+romanNumbers);
 }
 
 roman(402);
