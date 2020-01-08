@@ -1,35 +1,35 @@
-//const roman = (arabic) => {
+const roman = (arabic) => {
   
-  //var Validator = {
-    //M: 1000,
-    //CM: 900,
-    //D: 500,
-    //CD: 400,
-    //C: 100,
-    //XC: 90,
-    //L: 50,
-    //XL: 40,
-    //X: 10,
-    //IX: 9,
-    //V: 5,
-    //IV: 4,
-    //I: 1
-  //}
+  var Validator = {
+    M: 1000,
+    CM: 900,
+    D: 500,
+    CD: 400,
+    C: 100,
+    XC: 90,
+    L: 50,
+    XL: 40,
+    X: 10,
+    IX: 9,
+    V: 5,
+    IV: 4,
+    I: 1
+  }
 
-  //var romanNumbers = "";
+  var romanNumbers = "";
 
-  //for(var i in Validator) {
-    //while(arabic >= Validator[i]){
-      //romanNumbers += i;
-      //arabic -= Validator[i];
-      //console.log(i);
-    //}
-  //}
+  for(var i in Validator) {
+    while(arabic >= Validator[i]){
+      romanNumbers += i;
+      arabic -= Validator[i];
+      console.log(i);
+    }
+  }
 
-  //console.log(romanNumbers);
-//}
+  console.log(romanNumbers);
+}
 
-//roman(402);
+roman(402);
 
 //const roman = (language) => {
  
@@ -95,150 +95,150 @@
 
 //roman("VI");
 
-const planet = (language, money) => {
+//const planet = (language, money) => {
   
-  var PlanetlanguageList = ["glob", "prok", "pish", "tegj"];
+  //var PlanetlanguageList = ["glob", "prok", "pish", "tegj"];
 
-  var romanListValue = [1,5,10,50];
-  var index = 0;
-  var indexLength = 0;
-  var result = [];
-  var resultLength = 0;
+  //var romanListValue = [1,5,10,50];
+  //var index = 0;
+  //var indexLength = 0;
+  //var result = [];
+  //var resultLength = 0;
 
-  var planetChar = "";
-  planetChar = language;
+  //var planetChar = "";
+  //planetChar = language;
  
-  var decimal = 0;
-  var lastLett = 0;
-  var total = 0;
-  var arrayLength = [];
-  var pushIt = [];
-  var angka = [];
+  //var decimal = 0;
+  //var lastLett = 0;
+  //var total = 0;
+  //var arrayLength = [];
+  //var pushIt = [];
+  //var angka = [];
+
+  ////function countIt(Total, LastLett, LastDec){
+    ////if(LastLett > Total){
+      ////console.log("Total-: "+Total);
+      ////console.log("LastLett-: "+LastLett);
+      ////console.log("LastDec-: "+LastDec);
+      ////return LastDec - Total;
+    ////} else {
+      ////console.log("Total+: "+Total);
+      ////console.log("LastLett+: "+LastLett);
+      ////console.log("LastDec+: "+LastDec);
+      ////return LastDec + Total;
+    ////}
+  ////}
+  //var arrayChar = []; 
+  //var indexArrayChar = [];
+  //var arrayNum = [];
+  //for(var i in planetChar){
+    //index = planetChar.indexOf(PlanetlanguageList[i]);
+    //while(index != -1){
+      //pushIt.push(result);
+      //var LoopValue = arrayLength.length-pushIt.length;
+
+      //arrayChar.push(PlanetlanguageList[i]);
+      //indexArrayChar.push(index);
+      //planetChar = planetChar.replace(PlanetlanguageList[i], "-");
+      //index = planetChar.indexOf(PlanetlanguageList[i]);
+    //}
+  //}
+  
+  //indexArrayChar.sort(function(a,b){
+    //return b-a
+  //});
+
+  //function sortWithIndeces2(toSortt) {
+    //for(var i=0; i < indexArrayChar.length; i++){
+      //var y = indexArrayChar[i];
+      //toSortt[i] = [toSortt[i], y];
+      //console.log("toSortt[y]: "+toSortt[i]);
+    //}
+    //toSortt.sort(function(left, right){
+      //return left[0] > right[0] ? -1 : 1;
+    //});
+    //toSortt.sortWithIndeces2 = [];
+    //for(var j=0; j < indexArrayChar.length; j++){
+      //toSortt.sortWithIndeces2.push(toSortt[j][1]);
+      //toSortt[j] = toSortt[j][0];
+    //}
+    //console.log("\nSortChar: "+toSortt+"\n");
+    //return toSortt;
+  //}
+
+//sortWithIndeces2(arrayChar);
+
+  ////console.log("IndexArrayChar: "+indexArrayChar);
+  ////console.log("ArrayChar: "+arrayChar);
+  ////console.log("PlanetlanguageList: "+PlanetlanguageList);
+  ////console.log("PlanetCharFromFor: "+planetChar+"\n");
+  //for(var z in language){
+    //var indexof = PlanetlanguageList.indexOf(arrayChar[z]);
+    ////var indexof = arrayChar.indexOf(PlanetlanguageList[z]);
+    ////console.log("BeforeIndexOf: "+indexof);
+    //if(indexof != -1){
+      ////console.log(romanListValue[indexof]);
+      //arrayNum.push(romanListValue[indexof]);
+    //}
+    ////console.log("indexof: "+indexof);
+  //}
+  //console.log("ArrayChar: "+arrayChar);
+  //console.log("Result: "+result);
+  //console.log("ArrayNum: "+arrayNum);
 
   //function countIt(Total, LastLett, LastDec){
     //if(LastLett > Total){
-      //console.log("Total-: "+Total);
-      //console.log("LastLett-: "+LastLett);
-      //console.log("LastDec-: "+LastDec);
+      //console.log("Total: "+Total);
+      //console.log("LastLett: "+LastLett);
+      //console.log("LastDec: "+LastDec);
       //return LastDec - Total;
     //} else {
-      //console.log("Total+: "+Total);
-      //console.log("LastLett+: "+LastLett);
-      //console.log("LastDec+: "+LastDec);
+      //console.log("Total: "+Total);
+      //console.log("LastLett: "+LastLett);
+      //console.log("LastDec: "+LastDec);
       //return LastDec + Total;
     //}
+
   //}
-  var arrayChar = []; 
-  var indexArrayChar = [];
-  var arrayNum = [];
-  for(var i in planetChar){
-    index = planetChar.indexOf(PlanetlanguageList[i]);
-    while(index != -1){
-      pushIt.push(result);
-      var LoopValue = arrayLength.length-pushIt.length;
 
-      arrayChar.push(PlanetlanguageList[i]);
-      indexArrayChar.push(index);
-      planetChar = planetChar.replace(PlanetlanguageList[i], "-");
-      index = planetChar.indexOf(PlanetlanguageList[i]);
-    }
-  }
-  
-  indexArrayChar.sort(function(a,b){
-    return b-a
-  });
+  //for(var j=arrayNum.length-1; j>=0; j--){
+    //var k = j;
+    ////console.log("K: "+k);
+    ////console.log("Loop "+j);
+    //total = arrayNum[k];
+    //decimal = countIt(total, lastLett, decimal);
+    ////if(lastLett > total){
+      ////decimal = decimal - total
+      ////console.log("\n");
+      ////console.log("lastLett- :"+lastLett);
+      ////console.log("Decimal- : "+decimal);
+      ////console.log("Total- : "+total);
+    ////} else if(lastLett < total) {
+      ////decimal = decimal + total
+      ////console.log("\n");
+      ////console.log("lastLett+ : "+lastLett)
+      ////console.log("Decimal+ : "+decimal);
+      ////console.log("Total+ : "+total);
+    ////}
+    //lastLett = arrayNum[k];
+    ////console.log("\n");
+  //}
 
-  function sortWithIndeces2(toSortt) {
-    for(var i=0; i < indexArrayChar.length; i++){
-      var y = indexArrayChar[i];
-      toSortt[i] = [toSortt[i], y];
-      console.log("toSortt[y]: "+toSortt[i]);
-    }
-    toSortt.sort(function(left, right){
-      return left[0] > right[0] ? -1 : 1;
-    });
-    toSortt.sortWithIndeces2 = [];
-    for(var j=0; j < indexArrayChar.length; j++){
-      toSortt.sortWithIndeces2.push(toSortt[j][1]);
-      toSortt[j] = toSortt[j][0];
-    }
-    console.log("\nSortChar: "+toSortt+"\n");
-    return toSortt;
-  }
+  //if(money == "silver"){
+    //decimal = decimal * 17
+  //} else if(money == "gold"){
+    //decimal = decimal * 14450
+  //} else if(money == "iron"){
+    //decimal = decimal * 782
+  //}
 
-sortWithIndeces2(arrayChar);
+  //console.log("TotalDecimal: "+decimal);
 
-  //console.log("IndexArrayChar: "+indexArrayChar);
-  //console.log("ArrayChar: "+arrayChar);
-  //console.log("PlanetlanguageList: "+PlanetlanguageList);
-  //console.log("PlanetCharFromFor: "+planetChar+"\n");
-  for(var z in language){
-    var indexof = PlanetlanguageList.indexOf(arrayChar[z]);
-    //var indexof = arrayChar.indexOf(PlanetlanguageList[z]);
-    //console.log("BeforeIndexOf: "+indexof);
-    if(indexof != -1){
-      //console.log(romanListValue[indexof]);
-      arrayNum.push(romanListValue[indexof]);
-    }
-    //console.log("indexof: "+indexof);
-  }
-  console.log("ArrayChar: "+arrayChar);
-  console.log("Result: "+result);
-  console.log("ArrayNum: "+arrayNum);
+//}
 
-  function countIt(Total, LastLett, LastDec){
-    if(LastLett > Total){
-      console.log("Total: "+Total);
-      console.log("LastLett: "+LastLett);
-      console.log("LastDec: "+LastDec);
-      return LastDec - Total;
-    } else {
-      console.log("Total: "+Total);
-      console.log("LastLett: "+LastLett);
-      console.log("LastDec: "+LastDec);
-      return LastDec + Total;
-    }
-
-  }
-
-  for(var j=arrayNum.length-1; j>=0; j--){
-    var k = j;
-    //console.log("K: "+k);
-    //console.log("Loop "+j);
-    total = arrayNum[k];
-    decimal = countIt(total, lastLett, decimal);
-    //if(lastLett > total){
-      //decimal = decimal - total
-      //console.log("\n");
-      //console.log("lastLett- :"+lastLett);
-      //console.log("Decimal- : "+decimal);
-      //console.log("Total- : "+total);
-    //} else if(lastLett < total) {
-      //decimal = decimal + total
-      //console.log("\n");
-      //console.log("lastLett+ : "+lastLett)
-      //console.log("Decimal+ : "+decimal);
-      //console.log("Total+ : "+total);
-    //}
-    lastLett = arrayNum[k];
-    //console.log("\n");
-  }
-
-  if(money == "silver"){
-    decimal = decimal * 17
-  } else if(money == "gold"){
-    decimal = decimal * 14450
-  } else if(money == "iron"){
-    decimal = decimal * 782
-  }
-
-  console.log("TotalDecimal: "+decimal);
-
-}
-
-//planet("globprok");
-planet("globglob", "silver");
-//planet("prokglobglob");
-//planet("prokpish");
-//planet("tegjtegjglob");
+////planet("globprok");
+//planet("globglob", "silver");
+////planet("prokglobglob");
+////planet("prokpish");
+////planet("tegjtegjglob");
  
