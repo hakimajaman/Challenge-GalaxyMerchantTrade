@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 
 public class Main {
 
-      enum Validator{
+      private enum Validator{
         M(1000), 
         CM(900), 
         D(500), 
@@ -35,8 +35,7 @@ public class Main {
       }
 
     public static void main(String[] args) {
-      
-      String romanNumbers = "";
+
       //System.out.println("Enum Length = "+Validator.values().length);
 
       System.out.println("Input your ArabicNums to Convert to Roman: ");
@@ -44,28 +43,46 @@ public class Main {
       Scanner scanIn = new Scanner(System.in);
       String numberArabic = scanIn.nextLine();
       scanIn.close();
-      int arabic = Integer.parseInt(numberArabic);
+      int arabic = arabicNumber(2);
+      System.out.println("ArabicNumbers = "+arabic);
 
-      //Looping
-      for(int i=0; i<Validator.values().length; i++){
-      //for(Validator validator : Validator.values()){
-        //System.out.println("This for = "+i);
-        //System.out.println("Validator getValue by [i] = "+Validator.values()[i].getValue());
-        //System.out.println("Validator value by [i] = "+Validator.values()[i]);
-        //System.out.println("validator lowcase = "+validator.length);
-        int ValidatorGetValue = Validator.values()[i].getValue();
-        String ValidatorValue = ""+Validator.values()[i];
-        while(arabic >= ValidatorGetValue){
-          romanNumbers += ValidatorValue;
-          arabic -= ValidatorGetValue;
-        }
-      }
-
-      System.out.println(numberArabic+" to roman = "+romanNumbers);
-
-
-      //scanIn.close();
-      //System.out.println("Here's your text: "+whatever);
     }
 
+    //public static int conv(int convv){
+      //int input = 7;
+      //int tehe = arabicNumber(input);
+      //System.out.println("tehe = "+tehe);
+      //return tehe;
+    //}
+
+    public static int arabicNumber(int arabics){
+ 
+      String romanNumbers = "";
+      int rr = 0;
+
+
+      //if(arabic > 3999 || arabic == 0){
+        //System.out.println("This application just count 1 to 3999");
+        //return;
+      //}
+      ////Looping
+      //for(int i=0; i<Validator.values().length; i++){
+      ////for(Validator validator : Validator.values()){
+        ////System.out.println("This for = "+i);
+        ////System.out.println("Validator getValue by [i] = "+Validator.values()[i].getValue());
+        ////System.out.println("Validator value by [i] = "+Validator.values()[i]);
+        ////System.out.println("validator lowcase = "+validator.length);
+        //int ValidatorGetValue = Validator.values()[i].getValue();
+        //String ValidatorValue = ""+Validator.values()[i];
+        //while(arabic >= ValidatorGetValue){
+          //romanNumbers += ValidatorValue;
+          //arabic -= ValidatorGetValue;
+        //}
+      //}
+
+      //System.out.println(numberArabic+" to roman = "+romanNumbers);
+      System.out.println("rr = "+rr);
+      return rr;
+
+    } 
 }
