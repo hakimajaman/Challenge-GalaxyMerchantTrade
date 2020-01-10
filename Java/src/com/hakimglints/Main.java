@@ -28,7 +28,8 @@ public class Main {
 
 
       //ArabictoRoman.arabicNumber();
-      RomantoArabic.romanNumber();
+      //RomantoArabic.romanNumber();
+      PlanettoArabic.planetNumber();
 
     }
 
