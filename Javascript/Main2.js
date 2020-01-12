@@ -289,6 +289,17 @@ const planet = (language) => {
   var countPlanetCreditsValue2 = planetCreditsValues / countPlanetCreditsValue1;
   planetCreditsCountRomanValues.push(countPlanetCreditsValue2);
 
+  function planetCreditsChangeChar(change){
+    for(var i in planetCreditsCountRomanValues){
+      var values = 0
+      switch(change){
+        case planetCreditsWords[i] : values = planetCreditsCountRomanValues[i]; break;
+      }
+      console.log(values);
+      return values;
+    }
+  }
+
           console.log(planetCreditsCountRomanValues);        
           console.log(countPlanetCreditsValue1); 
           console.log(planetCreditsRomanValues);
@@ -347,15 +358,13 @@ const planet = (language) => {
  *
  */
 
-  var regexHowManyCredits = /^how many Credits is (([a-zA-Z\s])+)\?$/
+  var regexHowManyCredits = /^how many Credits is ([a-zA-Z\s]*)\?$/
 
   var planetHowManyCreditsWords;
   var planetHowManyCreditsRomanValues = "";
-  var inputHowManyCredits = "how many Credits is glob glob ?";
+  var planetHowManyCreditsCWord = 0;
+  var inputHowManyCredits = "how many Credits is glob glob Silver ?";
   var MatchItHowManyCredits = regexHowManyCredits.test(inputHowManyCredits);
-
-  var matchtes = inputHowManyCredits.match(regexHowManyCredits);
-  console.log(matchtes);
 
   if(MatchItHowManyCredits == false){
     console.log("Please Read README.md for how to use it");
@@ -364,6 +373,16 @@ const planet = (language) => {
     var matcherHowManyCredits = inputHowManyCredits.match(regexHowManyCredits);
     var aftersplitHowManyCredits = matcherHowManyCredits[1].split(" ");
     planetHowManyCreditsWords = aftersplitHowManyCredits;
+    planetHowManyCreditsWords.pop();
+    var lastArr = planetHowManyCreditsWords[planetHowManyCreditsWords.length-1]
+    for(var j in planetCreditsWords){
+      var index = lastArr.indexOf(planetCreditsWords[j])
+      while(index == -1){
+          console.log("You must input Credits Word");
+      return;
+      }
+    }
+    planetHowManyCreditsCWord = lastArr;
     planetHowManyCreditsWords.pop();
   }
 
@@ -379,16 +398,17 @@ const planet = (language) => {
       planetHowManyCreditsRomanValues += planetChangeChar(planetHowManyCreditsWords[i]);
     }
   }
-  var countPlanetHowManyCreditsValue = 0;
+  var countPlanetHowManyCreditsValue1 = 0;
   for(var i=0; i<planetHowManyCreditsRomanValues.length; i++) {
-    countPlanetHowManyCreditsValue += changeChar2(planetHowManyCreditsRomanValues[i]);
+    countPlanetHowManyCreditsValue1 += changeChar2(planetHowManyCreditsRomanValues[i]);
   }
+  var countPlanetHowManyCreditsValue2 = countPlanetHowManyCreditsValue1 * planetCreditsChangeChar(planetHowManyCreditsCWord);
+  console.log(planetHowManyCreditsCWord);
 
           console.log(planetHowManyCreditsRomanValues);
-          console.log(countPlanetHowMuchValue);
+          console.log(countPlanetHowManyCreditsValue1);
+          console.log(countPlanetHowManyCreditsValue2);
           console.log("----END HOW MANY CREDITS------\n");
-
-
 }
 
 
