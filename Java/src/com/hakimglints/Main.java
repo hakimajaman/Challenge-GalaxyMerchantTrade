@@ -29,7 +29,7 @@ public class Main {
 
       //ArabictoRoman.arabicNumber();
       //RomantoArabic.romanNumber();
-      PlanettoArabic.planetNumber();
+      PlanettoArabic.storingCredits();
 
     }
 
