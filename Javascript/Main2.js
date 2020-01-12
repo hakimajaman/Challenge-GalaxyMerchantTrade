@@ -271,7 +271,6 @@ const planet = (language) => {
 
   }
   var index = 0;
-
   for(var i=0; i<planetCreditsCount.length; i++){
     for(var j in planetLanguageWords){
       index = planetCreditsCount[i].indexOf(planetLanguageWords[j])
@@ -296,7 +295,102 @@ const planet = (language) => {
           console.log(planetCreditsCount);
           console.log(MatchItCredits);
           console.log("----END STORING CREDITS------\n");
+
+/*
+ *
+ * this for how much question
+ *
+ */
+
+  var regexHowMuch = /^how much is ([a-zA-Z\s]*)\?$/
+
+  var planetHowMuchWords;
+  var planetHowMuchRomanValues = "";
+  var inputHowMuch = "how much is glob glob ?";
+  var MatchItHowMuch = regexHowMuch.test(inputHowMuch);
+
+  if(MatchItHowMuch == false){
+    console.log("Please Read README.md for how to use it");
+    return;
+  } else {
+    var matcherHowMuch = inputHowMuch.match(regexHowMuch);
+    var aftersplitHowMuch = matcherHowMuch[1].split(" ");
+    planetHowMuchWords = aftersplitHowMuch;
+    planetHowMuchWords.pop();
+  }
+
+  for(var i=0; i<planetHowMuchWords.length; i++){
+    for(var j in planetLanguageWords){
+      index = planetHowMuchWords[i].indexOf(planetLanguageWords[j])
+      while(index == -1){
+          console.log("Your Planet Word was not found");
+      return;
+      }
+      console.log(planetHowMuchWords);
+
+      planetHowMuchRomanValues += planetChangeChar(planetHowMuchWords[i]);
+    }
+  }
+  var countPlanetHowMuchValue = 0;
+  for(var i=0; i<planetHowMuchRomanValues.length; i++) {
+    countPlanetHowMuchValue += changeChar2(planetHowMuchRomanValues[i]);
+  }
+
+          console.log(planetHowMuchRomanValues);
+          console.log(countPlanetHowMuchValue);
+          console.log("----END HOW MUCH ------\n");
+
+
+/*
+ *
+ * this for how many Credits question
+ *
+ */
+
+  var regexHowManyCredits = /^how many Credits is (([a-zA-Z\s])+)\?$/
+
+  var planetHowManyCreditsWords;
+  var planetHowManyCreditsRomanValues = "";
+  var inputHowManyCredits = "how many Credits is glob glob ?";
+  var MatchItHowManyCredits = regexHowManyCredits.test(inputHowManyCredits);
+
+  var matchtes = inputHowManyCredits.match(regexHowManyCredits);
+  console.log(matchtes);
+
+  if(MatchItHowManyCredits == false){
+    console.log("Please Read README.md for how to use it");
+    return;
+  } else {
+    var matcherHowManyCredits = inputHowManyCredits.match(regexHowManyCredits);
+    var aftersplitHowManyCredits = matcherHowManyCredits[1].split(" ");
+    planetHowManyCreditsWords = aftersplitHowManyCredits;
+    planetHowManyCreditsWords.pop();
+  }
+
+  for(var i=0; i<planetHowManyCreditsWords.length; i++){
+    for(var j in planetLanguageWords){
+      index = planetHowManyCreditsWords[i].indexOf(planetLanguageWords[j])
+      while(index == -1){
+          console.log("Your Planet Word was not found");
+      return;
+      }
+      console.log(planetHowManyCreditsWords);
+
+      planetHowManyCreditsRomanValues += planetChangeChar(planetHowManyCreditsWords[i]);
+    }
+  }
+  var countPlanetHowManyCreditsValue = 0;
+  for(var i=0; i<planetHowManyCreditsRomanValues.length; i++) {
+    countPlanetHowManyCreditsValue += changeChar2(planetHowManyCreditsRomanValues[i]);
+  }
+
+          console.log(planetHowManyCreditsRomanValues);
+          console.log(countPlanetHowMuchValue);
+          console.log("----END HOW MANY CREDITS------\n");
+
+
 }
+
 
 //planet("glob prok");
 //planet("glob glob", "silver");
