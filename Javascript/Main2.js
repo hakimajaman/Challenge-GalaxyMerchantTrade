@@ -96,82 +96,129 @@
 
 //roman("VI");
 
-const planet = (language, money) => {
+//const planet = (language, money) => {
 
+  //var regexIt = /^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/
+  
+  //var romanListValue = [1,5,10,50];
+  //var planetChar = "";
+  //planetChar = language;
+  //var aftersplit = planetChar.split(" "); 
+  //var arrayNum = aftersplit;
+  //arrayNum.sort(function(a,b){
+    //return b-a
+  //});
+
+  //function changeChar(change){
+    //var values = null
+    //switch(change){
+      //case "glob": values = "I"; break;
+      //case "prok": values = "V"; break;
+      //case "pish": values = "X"; break;
+      //case "tegj": values = "L"; break;
+    //}
+    //return values;
+  //}
+
+  //function changeChar2(change){
+    //var values = -1
+    //switch(change){
+      //case 'I': values = romanListValue[0]; break;
+      //case 'V': values = romanListValue[1]; break;
+      //case 'X': values = romanListValue[2]; break;
+      //case 'L': values = romanListValue[3]; break;
+    //}
+    //return values;
+  //}
+
+  //var changCharac = "";
+  //for(var i=0; i<arrayNum.length; i++) {
+    //changCharac += changeChar(arrayNum[i]);
+  //}
+  
+  //var MatchIt = regexIt.test(changCharac);
+
+  //function countIt(Total, LastLett, LastDec){
+    //if(LastLett > Total){
+      //return LastDec - Total;
+    //} else {
+      //return LastDec + Total;
+    //}
+
+  //}
+
+  //var total = 0;
+  //var lastNumber = 0;
+  //if(MatchIt == true){
+    //for(var i=arrayNum.length-1; i>=0; i--){
+      //total = countIt(changeChar2(changCharac.charAt(i)), lastNumber, total);
+      //lastNumber = changeChar2(changCharac.charAt(i));
+    //}
+    //if(money == "silver"){
+      //total = total * 17
+    //} else if(money == "gold"){
+      //total = total * 14450
+    //} else if(money == "iron"){
+      //total = total * 782
+    //}
+  //} else {
+    //console.log("wrong input!");
+    //return;
+  //}
+  //console.log("TotalDecimal: "+total);
+
+//}
+
+////planet("glob prok");
+////planet("glob glob", "silver");
+////planet("prok glob glob");
+////planet("prok pish");
+//planet("glob glob", "silver");
+
+const planet = (language) => {
+
+/*
+ *
+ * this for Roman
+ *
+ */
   var regexIt = /^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/
-  
-  var romanListValue = [1,5,10,50];
-  var planetChar = "";
-  planetChar = language;
-  var aftersplit = planetChar.split(" "); 
-  var arrayNum = aftersplit;
-  arrayNum.sort(function(a,b){
-    return b-a
-  });
 
-  function changeChar(change){
-    var values = null
-    switch(change){
-      case "glob": values = "I"; break;
-      case "prok": values = "V"; break;
-      case "pish": values = "X"; break;
-      case "tegj": values = "L"; break;
-    }
-    return values;
-  }
+/*
+ *
+ * this for storing number
+ *
+ */
+  var regexIs = /^([a-zA-Z]+) is (I|V|X|L|C|D|M)$/
 
-  function changeChar2(change){
-    var values = -1
-    switch(change){
-      case 'I': values = romanListValue[0]; break;
-      case 'V': values = romanListValue[1]; break;
-      case 'X': values = romanListValue[2]; break;
-      case 'L': values = romanListValue[3]; break;
-    }
-    return values;
-  }
+  var planetLanguageValue;
+  var input = language;
+  var MatchIt = regexIs.test(input);
 
-  var changCharac = "";
-  for(var i=0; i<arrayNum.length; i++) {
-    changCharac += changeChar(arrayNum[i]);
-  }
-  
-  var MatchIt = regexIt.test(changCharac);
-
-  function countIt(Total, LastLett, LastDec){
-    if(LastLett > Total){
-      return LastDec - Total;
-    } else {
-      return LastDec + Total;
-    }
-
-  }
-
-  var total = 0;
-  var lastNumber = 0;
-  if(MatchIt == true){
-    for(var i=arrayNum.length-1; i>=0; i--){
-      total = countIt(changeChar2(changCharac.charAt(i)), lastNumber, total);
-      lastNumber = changeChar2(changCharac.charAt(i));
-    }
-    if(money == "silver"){
-      total = total * 17
-    } else if(money == "gold"){
-      total = total * 14450
-    } else if(money == "iron"){
-      total = total * 782
-    }
-  } else {
-    console.log("wrong input!");
+  if(MatchIt == false){
+    console.log("Read README.md for how to use it");
     return;
+  } else {
+    planetLanguageValue = input.match(regexIs);
+    console.log(planetLanguageValue);
+    console.log("----\n");
   }
-  console.log("TotalDecimal: "+total);
 
+/*
+ *
+ * this for storing credits
+ * regex = /http\:\/\/www\.youtube\.com\/watch\?v=([\w-]{11})/;
+ */
+  //var regexCredits = /^([a-zA-Z]+) is )$/
+var regex = /http\:\/\/www\.youtube\.com\/watch\?v=([\w-]{11})/;
+var url = 'http://www.youtube.com/watch?v=Ahg6qcgoay4';
+var id = url.match(regex);
+  console.log(id);
 }
 
 //planet("glob prok");
 //planet("glob glob", "silver");
 //planet("prok glob glob");
 //planet("prok pish");
-planet("glob glob", "silver");
+planet("glob is I", "silver");
 
