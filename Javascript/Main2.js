@@ -275,7 +275,7 @@ const planet = (language) => {
     for(var j in planetLanguageWords){
       index = planetCreditsCount[i].indexOf(planetLanguageWords[j])
       while(index == -1){
-          console.log("Your Planet Word was not found");
+          console.log("I have no idea what you are talking about");
       return;
       }
       planetCreditsRomanValues += planetChangeChar(planetCreditsCount[i]);
@@ -321,7 +321,7 @@ const planet = (language) => {
   var MatchItHowMuch = regexHowMuch.test(inputHowMuch);
 
   if(MatchItHowMuch == false){
-    console.log("Please Read README.md for how to use it");
+    console.log("I have no idea what you are talking about");
     return;
   } else {
     var matcherHowMuch = inputHowMuch.match(regexHowMuch);
@@ -367,7 +367,7 @@ const planet = (language) => {
   var MatchItHowManyCredits = regexHowManyCredits.test(inputHowManyCredits);
 
   if(MatchItHowManyCredits == false){
-    console.log("Please Read README.md for how to use it");
+    console.log("I have no idea what you are talking about");
     return;
   } else {
     var matcherHowManyCredits = inputHowManyCredits.match(regexHowManyCredits);
