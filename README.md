@@ -1,5 +1,15 @@
 # Challenge-GalaxyMerchantTrade
 
+NOTE:
+      Folder Javascript == Javascript Version of this Challenge;
+      Folder Java == Java Version{
+        It not clean code;
+        this, my test application that has run out of time (with ProSpace);
+      }
+      Folder Java-CleanCode == Java Version{
+        this, my new application for clean this code and finishing this code;
+      }
+
 GITLINK:
 https://github.com/hakimajaman/Challenge-GalaxyMerchantTrade
 
