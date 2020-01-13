@@ -13,6 +13,12 @@ NOTE:
 GITLINK:
 https://github.com/hakimajaman/Challenge-GalaxyMerchantTrade
 
+NOTE:
+      I'm using IntelliJ Idea;
+      this application is just console application;
+      with the main class == com.hakimglints.Main;
+      Java 11;
+
 --PLANETLANGUAGE--
 
 NOTE: Sorry for not complete this test project;
