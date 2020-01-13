@@ -1,6 +1,7 @@
 # Challenge-GalaxyMerchantTrade
 
-NOTE:
+## Getting Started
+```
       Folder Javascript == Javascript Version of this Challenge;
       Folder Java == Java Version{
         It not clean code;
@@ -9,19 +10,24 @@ NOTE:
       Folder Java-CleanCode == Java Version{
         this, my new application for clean this code and finishing this code;
       }
+```
 
 GITLINK:
 https://github.com/hakimajaman/Challenge-GalaxyMerchantTrade
 
-NOTE:
-      I'm using IntelliJ Idea;
+### Installing
+I'm using IntelliJ Idea;
+```
       this application is just console application;
       with the main class == com.hakimglints.Main;
       Java 11;
+```
 
---PLANETLANGUAGE--
+#### --PLANETLANGUAGE--
 
-NOTE: Sorry for not complete this test project;
+### Closing
+```
+      Sorry for not complete this test project;
       My Time was over, so, I can make it clean;
       And I hope you want to consider me first;
       Because I learn this Java Programming in just 1 week;
@@ -37,4 +43,4 @@ NOTE: Sorry for not complete this test project;
       but, my time is over to make it like this.
       so.. Once again, I hope you want to consider me first;
       thank you;
-
+```
