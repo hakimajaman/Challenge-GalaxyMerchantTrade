@@ -1,8 +1,12 @@
 package com.hakimglints;
 
 import java.util.Stack;
+import java.util.regex.Matcher;
 
 public class InputNotes {
+
+  Regex thisRegex = new Regex();
+  RomantoArabic roman = new RomantoArabic();
 
 /*
  *
@@ -10,47 +14,63 @@ public class InputNotes {
  *
  */
   
-  //public static final Stack<String> planetLanguageWords = new Stack<String>();
-  //public Stack<String> planetLanguageValues = new Stack<String>();
+  public static final Stack<String> planetLanguageWords = new Stack<String>(); //Planet Number
+  public Stack<String> planetLanguageValues = new Stack<String>(); //to Roman Number
 
-  //public int storingNumber() {
-    //String inputLanguage = "glob is I";
-    //boolean MatchItLanguage = inputLanguage.matches(String.valueOf(regexIs));
+  //public int storingNumber(String input) {
+  public Stack<Stack<String>> storingNumber(Stack<String> push){
+    //String inputLanguage = input;
+    Stack<Stack<String>> inputLanguage = new Stack<Stack<String>>();
+    Stack<Stack<String>> error = new Stack<Stack<String>>();
+    inputLanguage.push(push);
 
-    //if(MatchItLanguage == false){
-      //System.out.println("Read README.md for how to use it");
-      //return 0;
-    //} else {
-      //Matcher matcherLanguage = regexIs.matcher(inputLanguage);
-      //if(matcherLanguage.find()){
-        //this.planetLanguageWords.push(matcherLanguage.group(1));
-        //this.planetLanguageValues.push(matcherLanguage.group(2));
-      //}
-      //System.out.println(planetLanguageValues);
-    //}
+    boolean[] MatchItLanguage = new boolean[inputLanguage.get(0).size()];
+    for(int i=0; i<inputLanguage.get(0).size(); i++){
+      MatchItLanguage[i] = inputLanguage.get(0).get(i).matches(String.valueOf(thisRegex.regexIs()));
+    };
+    for(boolean m : MatchItLanguage){
+      System.out.println(m);
+    }
+    //boolean MatchItLanguage = inputLanguage.matches(String.valueOf(thisRegex.regexIs()));
+
+    for(int i=0; i<MatchItLanguage.length; i++){
+      if(MatchItLanguage[i] == false){
+        System.out.println("Read README.md for how to use it");
+        return error;
+      } else {
+        Matcher matcherLanguage = thisRegex.regexIs().matcher(inputLanguage.get(0).get(i));
+        if(matcherLanguage.find()){
+          this.planetLanguageWords.push(matcherLanguage.group(1));
+          this.planetLanguageValues.push(matcherLanguage.group(2));
+        }
+      }
+    }
+    System.out.println(planetLanguageValues);
 
     //String getPlanetLanguageValuesToChar = "";
-    //String changeCharact = "";
+    //String changeCharact = ""; //to ArabicNumber
     //for(int i=0; i<planetLanguageValues.size(); i++){
       //getPlanetLanguageValuesToChar += planetLanguageValues.get(i);
-      //changeCharact += changeChar2(getPlanetLanguageValuesToChar.charAt(i));
+      //changeCharact += roman.changeChar(getPlanetLanguageValuesToChar.charAt(i));
     //}
-    //return 0;
-  //}
 
-  //public String planetChangeChar(String change){
-    //for(int i=0; i<this.planetLanguageValues.size(); i++){
-      //String thisChange = change;
-      //String values = "";
-      //if(thisChange.equals(this.planetLanguageWords.get(i))){
-        //values = this.planetLanguageValues.get(i);
-      //} else {
-        //System.out.println("No not = "+thisChange);
-      //}
-      //return values;
-    //}
-    //return null;
-  //}
+    return inputLanguage;
+  }
+
+  public String planetChangeChar(String change){
+    for(int i=0; i<this.planetLanguageValues.size(); i++){
+      String thisChange = change;
+      String values = "";
+      if(thisChange.equals(this.planetLanguageWords.get(i))){
+        values = this.planetLanguageValues.get(i);
+      } else {
+        System.out.println("No not = "+thisChange);
+      }
+      System.out.println(values);
+      return values;
+    }
+    return null;
+  }
 
 /*
  *

@@ -9,89 +9,69 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
+      InputLine input = new InputLine();
+      InputNotes storingPlanet = new InputNotes();
+
       System.out.println("Welcome to Planet Language Converter");
 
-      //String choose = "";
-      //choose = inputs();
-      //String ch = choose.toUpperCase();
-      //System.out.println("choose = "+choose);
-      //System.out.println("ch = "+ch);
+//this storingPlanet
 
-      //ArabictoRoman.arabicNumber();
+      System.out.println("Just input your planet word with 'is' and roman number");
+      System.out.println("Ex: glob is I");
+      System.out.println("If you finished, just type 'ok'");
 
-     
-      //String inputTo = "";
-      //inputTo = inputs();
-
-      //PlanettoArabic arabic = new PlanettoArabic();
-
-      //inputit.storingNumber();
-      //inputit.storingCredits();
-      //inputit.howMuchQuestion();
-      //inputit.howManyCreditsQuestion();
- 
-      //System.out.println("Input Roman to Convert Arabic: ");
-      //RomantoArabic.romanNumber();
-
-      Scanner scan1 = new Scanner(System.in);
-
-      System.out.println("Just input your roman number and press enter");
-      System.out.println("if you want to stop input, just type 'ok'");
-
-      Stack<String> romanValue = new Stack<String>();
+      Stack<String> planetValue = new Stack<String>();
 
       Stack<Stack<String>> tes = new Stack<Stack<String>>();
 
-      romanValue.push("one");
-      String lastRoman = romanValue.get(romanValue.size()-1);
+      planetValue.push("one");
+      String lastPlanet = planetValue.get(planetValue.size()-1);
 
-      while(lastRoman != "ok"){
-        System.out.print("Input your Roman Number = ");
-        romanValue.push(scan1.nextLine());
-        String lastRoman2 = romanValue.get(romanValue.size()-1);
-        if(lastRoman2.equals("ok")){
-          tes.push(romanValue);
+      while(lastPlanet != "ok"){
+        System.out.print("Input your Planet Number = ");
+        planetValue.push(input.inputIt());
+        String lastPlanet2 = planetValue.get(planetValue.size()-1);
+        if(lastPlanet2.equals("ok") || lastPlanet2.equals("OK") || lastPlanet2.equals("Ok") || lastPlanet2.equals("oK")){
+          tes.push(planetValue);
           //for(int i
             // 0; i<romanValue.size(); i++){
-            romanValue.pop();
-            romanValue.remove(0);
-            RomantoArabic.romanNumber(romanValue); 
+            planetValue.pop();
+            planetValue.remove(0);
+            storingPlanet.storingNumber(planetValue);
           return;
         }
       }
 
-      for(String r : romanValue){
-        System.out.print(r);
-      }
 
+//endThis storingPlanet
+     
+//this roman
+      //System.out.println("Just input your roman number and press enter");
+      //System.out.println("if you want to stop input, just type 'ok'");
 
-      //Example:
-      //Scanner scan = new Scanner(System.in);
+      //Stack<String> romanValue = new Stack<String>();
 
-      //String[] romanConverted = new String[5];
-      //for(int i=0; i<romanConverted.length; i++ ){
-        //System.out.print("Example "+i+" Input Here : ");
-        //romanConverted[i] = scan.nextLine();
+      //Stack<Stack<String>> tes = new Stack<Stack<String>>();
+
+      //romanValue.push("one");
+      //String lastRoman = romanValue.get(romanValue.size()-1);
+
+      //while(lastRoman != "ok"){
+        //System.out.print("Input your Roman Number = ");
+        //romanValue.push(input.inputIt());
+        //String lastRoman2 = romanValue.get(romanValue.size()-1);
+        //if(lastRoman2.equals("ok") || lastRoman2.equals("OK") || lastRoman2.equals("Ok") || lastRoman2.equals("oK")){
+          //tes.push(romanValue);
+          ////for(int i
+            //// 0; i<romanValue.size(); i++){
+            //romanValue.pop();
+            //romanValue.remove(0);
+            //RomantoArabic.romanNumber(romanValue); 
+          //return;
+        //}
       //}
-
-      //System.out.print("OUTPUT HERE--------------");
-
-      //for(String r : romanConverted){
-        //System.out.println(r);
-      //}
+//endThis roman
 
     }
-
-    public static String inputs(){
-      String inp = "";
-      Scanner scanIn = new Scanner(System.in);
-      inp = scanIn.nextLine();
-
-      return inp;
-    }
-
-
-
-
 
 }

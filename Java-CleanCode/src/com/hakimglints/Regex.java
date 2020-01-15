@@ -10,6 +10,7 @@ public class Regex {
  * this for Roman
  *
  */
+
   public static String regexIt = "^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$";
 
 /*
@@ -17,7 +18,12 @@ public class Regex {
  * this for storing number
  *
  */
-  public static Pattern regexIs = Pattern.compile("^([a-zA-Z]+) is (I|V|X|L|C|D|M)$");
+  //public static Pattern regexIs = Pattern.compile("^([a-zA-Z]+) is (I|V|X|L|C|D|M)$");
+  public static Pattern regexIs(){
+    String values = "^([a-zA-Z]+) is (I|V|X|L|C|D|M)$";
+    Pattern reg = Pattern.compile(values);
+    return reg;
+  }
 
 /*
  *
@@ -39,6 +45,5 @@ public class Regex {
  *
  */
   public static Pattern regexHowManyCredits = Pattern.compile("^how many Credits is ([a-zA-Z\\s]*)\\?$");
-
 
 }
